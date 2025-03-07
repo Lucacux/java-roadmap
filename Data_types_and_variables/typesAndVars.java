@@ -64,5 +64,6 @@ public class typesAndVars {
     for (int i = 0; i < array.length; i++) {
       System.out.printf("Number (%d): %d\n", i + 1, array[i]);
     }
+      return;
   }
 }
