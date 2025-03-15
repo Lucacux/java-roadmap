@@ -24,6 +24,7 @@ public class metricImperialConverter {
             length(inputScanner);
             break;
             case 2:
+            mass(inputScanner);
             break;
             case 3:
             break;
@@ -156,7 +157,7 @@ public class metricImperialConverter {
 
         return kg;
     }
-    public static double KgToLb(double kg){
+    public static double kgToLb(double kg){
         double lb = kg * 2.2046; 
         return lb;
     }
@@ -297,6 +298,7 @@ public class metricImperialConverter {
         return;
     }
     // ALL LOGIC METHODS ARE MADE FOR BEING CONNECTED TO MAIN METHODS LIKE LENGTH OR MASS.
+    // LENGTH LOGIC METHODS ARE DEFINED.
     // METER TO FEET LOGIC AND VICEVERSA METHODS ARE DEFINED.
     public static void meterToFeetLogic(Scanner inputScanner){
         double retInputMeterToFeet = enterMeterToFeet(inputScanner);
@@ -342,10 +344,42 @@ public class metricImperialConverter {
 
         return;
     }
+    // MASS LOGIC METHODS ARE DEFINED.
+    public static void kilogramToPoundLogic(Scanner inputScanner){
+        double retEnterKgtoLb = enterKgToLb(inputScanner);
+        double retKgtoLb = kgToLb(retEnterKgtoLb);
+        printKg(retEnterKgtoLb, retKgtoLb);
+        booleanCalculate(inputScanner);
+
+        return;
+    }
+    public static void poundToKilogramLogic(Scanner inputScanner){
+        double retEnterLbToKg = enterLbToKg(inputScanner);
+        double retLbToKg = lbToKg(retEnterLbToKg);
+        printKg(retEnterLbToKg, retLbToKg);
+        booleanCalculate(inputScanner);
+
+        return;
+    }
+    public static void gramsToOuncesLogic(Scanner inputScanner){
+        double retEnterGramToOunce = enterGrtoOz(inputScanner);
+        double retGramToOunce = grToOz(retEnterGramToOunce);
+        printOz(retEnterGramToOunce, retGramToOunce);
+        booleanCalculate(inputScanner);
+        return;
+    }
+    public static void ouncesToGramsLogic(Scanner inputScanner){
+        double retEnterOzToGr = enterOzToGr(inputScanner);
+        double retOzToGr = ozToGr(retEnterOzToGr);
+        printGr(retEnterOzToGr, retOzToGr);
+        booleanCalculate(inputScanner);
+        return;
+    }
     // MAIN METHODS (LIKE LENGTH) ARE DEFINED.
     public static void length(Scanner inputScanner){
         int option = 0;
         do {
+        System.out.printf("Length section:\n");
         System.out.printf("Please select an option\n");
         System.out.printf("(1). Meter to feet.\n");
         System.out.printf("(2). Feet to meter.\n");
@@ -355,10 +389,11 @@ public class metricImperialConverter {
         System.out.printf("-----------------------\n");
         System.out.printf("(5) Centimeter to inches.\n");
         System.out.printf("(6). Inches to Centimeters\n");
-        System.out.printf("(7). Back to Main menu.\n")
+        System.out.printf("(7). Back to Main menu.\n");
         option = inputScanner.nextInt();
 
         switch(option){
+
             case 1:
             meterToFeetLogic(inputScanner);
             break;
@@ -394,5 +429,47 @@ public class metricImperialConverter {
     } while (option != 7);
         return;
     }
-    
+    public static void mass(Scanner inputScanner){
+        int option = 0;
+        do {
+        System.out.printf("Mass section:\n");
+        System.out.printf("Please select an option.\n");
+        System.out.printf("(1). Kilogram to pounds.\n");
+        System.out.printf("(2). Pound to Kilogram.\n");
+        System.out.printf("------------------------\n");
+        System.out.printf("(3). Grams to Ounces.\n");
+        System.out.printf("(4). Ounces to Grams.\n");
+        System.out.printf("(5). Go back to Main menu.\n");
+        option = inputScanner.nextInt();
+
+        switch (option){
+
+            case 1:
+            kilogramToPoundLogic(inputScanner);
+            break;
+
+            case 2:
+            poundToKilogramLogic(inputScanner);
+            break;
+
+            case 3:
+            gramsToOuncesLogic(inputScanner);
+            break;
+
+            case 4:
+            ouncesToGramsLogic(inputScanner);
+            break;
+
+            case 5:
+            menu(inputScanner);
+            break;
+
+            default:
+            System.out.printf("Sorry! that's not a valid option.\n");
+            break;
+
+        }
+        } while (option != 5); 
+        return;
+    }
 }
