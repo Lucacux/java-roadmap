@@ -210,4 +210,92 @@ public class metricImperialConverter {
         return;
     }
     // TODO: VOLUME AND LIQUIDS
+    // LITERS TO LIQUID OZ AND VICEVERSA METHODS ARE DEFINED.
+    public static double enterLtoLiquidOunces(Scanner inputScanner){
+        System.out.printf("Please enter how many liters do you want to convert to liquid ounces\n");
+        double liters = inputScanner.nextDouble();
+        return liters;
+    }
+    public static double lToOunces(double liters){
+        double liquidOz = liters * 33.814;
+        return liquidOz;
+    }
+    public static void printLiquidOunces(double l, double liquidOunces){
+        System.out.printf("(%f) LITERS are quivalent to: (%f) LIQUID OUNCES\n", l, liquidOunces);
+
+        return;
+    }
+    public static double enterLiquidOuncesToLiters(Scanner inputScanner){
+        System.out.printf("Please enter how many LIQUID OUNCES do you want to convert to LITERS\n");
+        double liquidOunces = inputScanner.nextDouble();
+
+        return liquidOunces;
+    }
+    public static double ouncesToLiters(double liquidOunces){
+        double liters = liquidOunces * 0.0295735;
+
+        return liters;
+    }
+    public static void printLiters(double liquidOunces, double liters){
+        System.out.printf("(%f) LIQUID OUNCES are equivalent to: (%f) LITERS\n", liquidOunces, liters);
+        return;
+    }
+    // MILILITERS TO LIQUID OUNCES AND VICEVERSA METHODS ARE DEFINED.
+    public static double enterMililitersToLiquidOunces(Scanner inputScanner){
+        System.out.printf("Please enter how many MILILITERS do you want to convert to LIQUID OUNCES\n");
+        double mililiters = inputScanner.nextDouble();
+
+        return mililiters;
+    }
+    public static double MililitersToLiquidOunces(double mililiters){
+        double liquidOunces = mililiters * 0.0338;
+        return liquidOunces;
+    }
+    public static void printLiquidOuncesmM(double mililiters, double liquidOunces){
+        System.out.printf("(%f) MILILITERS are equivalent to: (%f) LIQUID OUNCES\n", mililiters, liquidOunces);
+        return;
+    }
+    public static double enterLiquidOuncesToMililiters(Scanner inputScanner){
+        System.out.printf("Please enter how many LIQUID OUNCES do you want to convert to MILILITERS\n");
+        double liquidOunces = inputScanner.nextDouble();
+        return liquidOunces;
+    }
+    public static double liquidOuncesToMm(double liquidOunces){
+        double mililiters = liquidOunces * 29.5735; 
+
+        return mililiters; 
+    }
+    public static void printMililiters(double liquidOunces, double mililiters){
+        System.out.printf("(%f) LIQUID OUNCES are equivalent to: (%f) MILILITERS\n", liquidOunces, mililiters);
+        return;
+    }
+    // GALLONS to LITERS AND VICEVERSA METHODS
+    public static double enterGallonsToLiters(Scanner inputScanner){
+        System.out.printf("Please enter how many GALLONS do you want to convert LITERS\n");
+        double gallons = inputScanner.nextDouble();
+        return gallons;
+    }
+    public static double gallonsToLiters(double gallons){
+        double liters = gallons * 3.7854; 
+        return liters;
+    }
+    public static void printLitersFromGallons(double gallons, double liters){
+        System.out.printf("(%f) GALLONS are equivalent to: (%f) LITERS\n", gallons, liters);
+
+        return;
+    }
+    public static double enterLitersToGallons(Scanner inputScanner){
+        System.out.printf("Please enter how many LITERS do you want to convert to GALLONS\n");
+        double liters = inputScanner.nextDouble();
+        return liters;
+    }
+    public static double litersToGallons(double liters){
+        double gallons = liters * 0.264172;
+
+        return gallons;
+    }
+    public static void printGallonsFromLiters(double liters, double gallons){
+        System.out.printf("(%f) LITERS are equivalent to (%f) GALLONS\n", liters, gallons);
+        return;
+    }
 }
