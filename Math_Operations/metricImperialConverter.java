@@ -152,7 +152,7 @@ public class metricImperialConverter {
     // MASS SECTION
     // KG TO LB AND VICERVERSA METHODS ARE DEFINED.
     public static double enterKgToLb(Scanner inputScanner){
-        System.out.printf("Please enter how many KG do you want to convert to LB\n");
+        System.out.printf("Please enter how many KG do you want to convert to LB.\n");
         double kg = inputScanner.nextDouble();
 
         return kg;
@@ -177,8 +177,37 @@ public class metricImperialConverter {
         return kg;
     }
     public static void printKg(double lb, double kg){
-        System.out.printf("(%f) LB are equivalent to: (%f) KG\n", lb, kg);
-
+        System.out.printf("(%f) LB are equivalent to: (%f) KG.\n", lb, kg);
         return;
     }
+    // OZ to GR AND VICEVERSA METHODS ARE DEFINED.
+    public static double enterOzToGr(Scanner inputScanner){
+        System.out.printf("Please enter how many OZ do you want to convert to GR.\n");
+        double oz = inputScanner.nextDouble();
+
+        return oz;
+    }
+    public static double ozToGr(double oz){
+        double gr = oz * 28.3495;
+
+        return gr;
+    }
+    public static void printGr(double oz, double gr){
+        System.out.printf("(%f) OZ are equivalent to: (%f) GR.\n", oz, gr);
+        return;
+    }
+    public static double enterGrtoOz(Scanner inputScanner){
+        System.out.printf("Please enter how many GR do you want to convert to OZ.\n");
+        double gr = inputScanner.nextDouble();
+        return gr;
+    }
+    public static double grToOz(double gr){
+        double oz = gr * 0.0353;
+        return oz;
+    }
+    public static void printOz(double gr, double oz){
+        System.out.printf("(%f) GR are quivalent to: (%f) OZ.\n", gr, oz);
+        return;
+    }
+    // TODO: VOLUME AND LIQUIDS
 }
