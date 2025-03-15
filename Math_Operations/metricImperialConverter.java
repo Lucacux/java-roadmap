@@ -375,6 +375,21 @@ public class metricImperialConverter {
         booleanCalculate(inputScanner);
         return;
     }
+    // VOLUME LOGIC METHODS ARE DEFINED.
+    public static void literToLiquidOzLogic(Scanner inputScanner){
+        double retEnterLiterToLiquidOz = enterLtoLiquidOunces(inputScanner);
+        double retLiterToLiquidOz = lToOunces(retEnterLiterToLiquidOz);
+        printLiquidOunces(retEnterLiterToLiquidOz, retLiterToLiquidOz);
+        booleanCalculate(inputScanner);
+        return;
+    }
+    public static void liquidOunceToLiterLogic(Scanner inputScanner){
+        double retEnterLiquidOunceToLiter = enterLiquidOuncesToLiters(inputScanner);
+        double liquidOunceToLiter = ouncesToLiters(retEnterLiquidOunceToLiter);
+        printLiters(retEnterLiquidOunceToLiter, liquidOunceToLiter);
+        booleanCalculate(inputScanner);
+        return;
+    }
     // MAIN METHODS (LIKE LENGTH) ARE DEFINED.
     public static void length(Scanner inputScanner){
         int option = 0;
@@ -470,6 +485,51 @@ public class metricImperialConverter {
 
         }
         } while (option != 5); 
+        return;
+    }
+    public static void volume (Scanner inputScanner){
+        int option = 0;
+        do {
+        System.out.printf("Volume section:\n");
+        System.out.printf("Please select an option:\n");
+        System.out.printf("(1). Liter to Liquid ounce.\n");
+        System.out.printf("(2). Liquid ounce to Liter.\n");
+        System.out.printf("---------------------------\n");
+        System.out.printf("(3). Mililiter to Liquid ounce.\n");
+        System.out.printf("(4). Liquid ounce to Mililiter.\n");
+        System.out.printf("-------------------------------\n");
+        System.out.printf("(5). Gallon to Liter.\n");
+        System.out.printf("(6). Liter to Gallon.\n");
+        System.out.printf("(7). Go back to Main menu.\n");
+        option = inputScanner.nextInt();
+
+        switch (option){
+            case 1:
+
+            break;
+
+            case 2:
+            break;
+
+            case 3:
+            break;
+
+            case 4:
+            break;
+
+            case 5:
+            break;
+
+            case 6:
+            break;
+
+            case 7:
+            break;
+
+            default: 
+            System.out.printf("Sorry! That's not a valid option.\n");
+        }
+        } while (option != 7);
         return;
     }
 }
