@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class metricImperialConverter {
     public static void main (String [] args){
         Scanner inputScanner = new Scanner(System.in);
-
+        menu(inputScanner);
         inputScanner.close();
     }
     // Methods are defined.
@@ -21,6 +21,7 @@ public class metricImperialConverter {
         option = inputScanner.nextInt();
         switch (option){
             case 1:
+            length(inputScanner);
             break;
             case 2:
             break;
@@ -39,21 +40,19 @@ public class metricImperialConverter {
     }
     // LENGTH SECTION.
     // METER TO FEET AND VICEVERSA METHODS.
-    // TODO: CHANGE TYPE INT TO DOUBLE FOR SOME FUNCTIONS.
-    public static int enterMeterToFeet(Scanner inputScanner){
-        int meters;
+    public static double enterMeterToFeet(Scanner inputScanner){
         System.out.printf("Please enter how many METERS do you want to convert to FEET.\n");
-        meters = inputScanner.nextInt();
+        double meters = inputScanner.nextDouble();
 
         return meters;
     }
-    public static double meterToFeet(Scanner inputScanner, int meters){
+    public static double meterToFeet(Scanner inputScanner, double meters){
         
         double feet = meters * 3.28084; // 3,28084 is the equivalent of FEET in METERS.
 
         return feet;
     }
-    public static void printFeet(int meters, double feet){
+    public static void printFeet(double meters, double feet){
         System.out.printf("(%d) meters are (%f) feet.\n", meters, feet);
         return;
     }
@@ -77,13 +76,13 @@ public class metricImperialConverter {
         return feet;
     }
     public static double feetToMeter(double feet){
-        // Types are casted
+
         double meter =  feet * 0.3048;
 
         return meter;
     }
-    public static void printMeter(double feet, int meter){
-        System.out.printf("(%f) feet are equiv(%d) meters.\n", feet, meter);
+    public static void printMeter(double feet, double meter){
+        System.out.printf("(%f) FEET are equivalent to: (%f) METERS.\n", feet, meter);
 
         return;
     }
@@ -134,7 +133,7 @@ public class metricImperialConverter {
 
         return;
     }
-    public static double inchesToCm(Scanner inputScanner){
+    public static double enterInchesToCm(Scanner inputScanner){
         System.out.printf("Please enter how many INCHES do you want to convert to CM.\n");
         double inches = inputScanner.nextDouble();
 
@@ -209,7 +208,6 @@ public class metricImperialConverter {
         System.out.printf("(%f) GR are quivalent to: (%f) OZ.\n", gr, oz);
         return;
     }
-    // TODO: VOLUME AND LIQUIDS
     // LITERS TO LIQUID OZ AND VICEVERSA METHODS ARE DEFINED.
     public static double enterLtoLiquidOunces(Scanner inputScanner){
         System.out.printf("Please enter how many liters do you want to convert to liquid ounces\n");
@@ -298,4 +296,103 @@ public class metricImperialConverter {
         System.out.printf("(%f) LITERS are equivalent to (%f) GALLONS\n", liters, gallons);
         return;
     }
+    // ALL LOGIC METHODS ARE MADE FOR BEING CONNECTED TO MAIN METHODS LIKE LENGTH OR MASS.
+    // METER TO FEET LOGIC AND VICEVERSA METHODS ARE DEFINED.
+    public static void meterToFeetLogic(Scanner inputScanner){
+        double retInputMeterToFeet = enterMeterToFeet(inputScanner);
+        double retMeterToFeet = meterToFeet(inputScanner, retInputMeterToFeet);
+        printFeet(retInputMeterToFeet, retMeterToFeet);
+        booleanCalculate(inputScanner);
+        return;
+    }
+    public static void feetToMeterLogic(Scanner inputScanner){
+        double retInputFeetToMeter = enterFeetToMeter(inputScanner);
+        double retFeetToMeter = feetToMeter(retInputFeetToMeter);
+        printMeter(retInputFeetToMeter, retFeetToMeter);
+        return;
+    }
+    // KM TO MILES LOGIC AND VICEVERSA METHODS ARE DEFINED.
+    public static void kmToMilesLogic(Scanner inputScanner){
+        double retInputKmToMiles = enterKmToMiles(inputScanner);
+        double retKmToMiles = kmToMiles(retInputKmToMiles);
+        printMiles(retInputKmToMiles, retKmToMiles);
+        booleanCalculate(inputScanner);
+        return;
+    }
+    public static void milesToKmLogic(Scanner inputScanner){
+        double retInputMilesToKm = enterMilesToKm(inputScanner);
+        double milesToKm = milesToKm(retInputMilesToKm);
+        printMiles(retInputMilesToKm, milesToKm);
+        booleanCalculate(inputScanner);
+        return;
+    }
+    // CM TO INCHES LOGIC AND VICEVERSA METHODS ARE DEFINED.
+    public static void cmToInchesLogic(Scanner inputScanner){
+        double retEnterCmToInches = enterCmToInches(inputScanner);
+        double retCmToInches = cmToInches(retEnterCmToInches);
+        printInches(retEnterCmToInches, retCmToInches);
+        booleanCalculate(inputScanner);
+        return;
+    }
+    public static void inchesToCmLogic(Scanner inputScanner){
+        double retEnterInchesToCm = enterInchesToCm(inputScanner);
+        double retInchesToCm = inchesToCm(retEnterInchesToCm);
+        printCm(retEnterInchesToCm, retInchesToCm);
+        booleanCalculate(inputScanner);
+
+        return;
+    }
+    // MAIN METHODS (LIKE LENGTH) ARE DEFINED.
+    public static void length(Scanner inputScanner){
+        int option = 0;
+        do {
+        System.out.printf("Please select an option\n");
+        System.out.printf("(1). Meter to feet.\n");
+        System.out.printf("(2). Feet to meter.\n");
+        System.out.printf("-------------------\n");
+        System.out.printf("(3). Kilometer to mile.\n");
+        System.out.printf("(4). Mile to Kilometer.\n");
+        System.out.printf("-----------------------\n");
+        System.out.printf("(5) Centimeter to inches.\n");
+        System.out.printf("(6). Inches to Centimeters\n");
+        System.out.printf("(7). Back to Main menu.\n")
+        option = inputScanner.nextInt();
+
+        switch(option){
+            case 1:
+            meterToFeetLogic(inputScanner);
+            break;
+
+            case 2:
+            feetToMeterLogic(inputScanner);
+            break;
+
+            case 3:
+            kmToMilesLogic(inputScanner);
+            break;
+
+            case 4:
+            milesToKmLogic(inputScanner);
+            break;
+            
+            case 5:
+            cmToInchesLogic(inputScanner);
+            break;
+
+            case 6:
+            inchesToCmLogic(inputScanner);
+            break;
+
+            case 7:
+            menu(inputScanner);
+            break;
+
+            default:
+            System.out.printf("Sorry! That's not a valid option.\n");
+            break;
+        }
+    } while (option != 7);
+        return;
+    }
+    
 }
