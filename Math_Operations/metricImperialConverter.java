@@ -149,5 +149,36 @@ public class metricImperialConverter {
         System.out.printf("(%f) INCHES are equivalent to: (%f) CM.\n", inches, cm);
         return;
     }
-    
+    // MASS SECTION
+    // KG TO LB AND VICERVERSA METHODS ARE DEFINED.
+    public static double enterKgToLb(Scanner inputScanner){
+        System.out.printf("Please enter how many KG do you want to convert to LB\n");
+        double kg = inputScanner.nextDouble();
+
+        return kg;
+    }
+    public static double KgToLb(double kg){
+        double lb = kg * 2.2046; 
+        return lb;
+    }
+    public static void printLb(double kg, double lb){
+        System.out.printf("(%f) KG are equivalent to: (%f) LB.\n", kg, lb);
+
+        return;
+    }
+    public static double enterLbToKg(Scanner inputScanner){
+        System.out.printf("Please enter how many LB do you want to convert to KG.\n");
+        double lb = inputScanner.nextDouble();
+        return lb;
+    }
+    public static double lbToKg(double lb){
+        double kg = lb * 0.4536;
+
+        return kg;
+    }
+    public static void printKg(double lb, double kg){
+        System.out.printf("(%f) LB are equivalent to: (%f) KG\n", lb, kg);
+
+        return;
+    }
 }
