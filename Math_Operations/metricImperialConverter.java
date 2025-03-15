@@ -385,8 +385,36 @@ public class metricImperialConverter {
     }
     public static void liquidOunceToLiterLogic(Scanner inputScanner){
         double retEnterLiquidOunceToLiter = enterLiquidOuncesToLiters(inputScanner);
-        double liquidOunceToLiter = ouncesToLiters(retEnterLiquidOunceToLiter);
-        printLiters(retEnterLiquidOunceToLiter, liquidOunceToLiter);
+        double retLiquidOunceToLiter = ouncesToLiters(retEnterLiquidOunceToLiter);
+        printLiters(retEnterLiquidOunceToLiter, retLiquidOunceToLiter);
+        booleanCalculate(inputScanner);
+        return;
+    }
+    public static void mililiterToLiquidOunceLogic(Scanner inputScanner){
+        double retEnterMililiterToLiquidOunce = enterMililitersToLiquidOunces(inputScanner);
+        double retMililiterToLiquidOunce = MililitersToLiquidOunces(retEnterMililiterToLiquidOunce);
+        printLiquidOuncesmM(retEnterMililiterToLiquidOunce, retMililiterToLiquidOunce);
+        booleanCalculate(inputScanner);
+        return;
+    }
+    public static void liquidOunceToMililiterLogic(Scanner inputScanner){
+        double retEnterLiquidOunceTomM = enterLiquidOuncesToMililiters(inputScanner);
+        double retLiquidOunceToMililiter = liquidOuncesToMm(retEnterLiquidOunceTomM);
+        printMililiters(retEnterLiquidOunceTomM, retLiquidOunceToMililiter);
+        booleanCalculate(inputScanner);
+        return;
+    }
+    public static void gallonToLiterLogic(Scanner inputScanner){
+        double retEnterGallonToLiter = enterGallonsToLiters(inputScanner);
+        double retGallonToLiter = gallonsToLiters(retEnterGallonToLiter);
+        printLitersFromGallons(retEnterGallonToLiter, retGallonToLiter);
+        booleanCalculate(inputScanner);
+        return;
+    }
+    public static void literToGallonLogic(Scanner inputScanner){
+        double retEnterLiterToGallon = enterLitersToGallons(inputScanner);
+        double retLiterToGallon = litersToGallons(retEnterLiterToGallon);
+        printGallonsFromLiters(retEnterLiterToGallon, retLiterToGallon);
         booleanCalculate(inputScanner);
         return;
     }
@@ -504,26 +532,33 @@ public class metricImperialConverter {
         option = inputScanner.nextInt();
 
         switch (option){
-            case 1:
 
+            case 1:
+            literToLiquidOzLogic(inputScanner);
             break;
 
             case 2:
+            liquidOunceToLiterLogic(inputScanner);
             break;
 
             case 3:
+            mililiterToLiquidOunceLogic(inputScanner);
             break;
 
             case 4:
+            liquidOunceToMililiterLogic(inputScanner);
             break;
 
             case 5:
+            gallonToLiterLogic(inputScanner);
             break;
 
             case 6:
+            literToGallonLogic(inputScanner);
             break;
 
             case 7:
+            menu(inputScanner);
             break;
 
             default: 
