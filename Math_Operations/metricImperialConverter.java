@@ -17,7 +17,7 @@ public class metricImperialConverter {
         System.out.printf("1. Length.\n");
         System.out.printf("2. Mass.\n");
         System.out.printf("3. Volume.\n");
-        System.out.printf("4. Exit program");
+        System.out.printf("4. Exit program.\n");
         option = inputScanner.nextInt();
         switch (option){
             case 1:
@@ -27,6 +27,7 @@ public class metricImperialConverter {
             mass(inputScanner);
             break;
             case 3:
+            volume(inputScanner);
             break;
             case 4:
             System.out.printf("Keep studying physics!\n");
@@ -54,7 +55,7 @@ public class metricImperialConverter {
         return feet;
     }
     public static void printFeet(double meters, double feet){
-        System.out.printf("(%d) meters are (%f) feet.\n", meters, feet);
+        System.out.printf("(%f) meters are (%f) feet.\n", meters, feet);
         return;
     }
     public static void booleanCalculate(Scanner inputScanner){

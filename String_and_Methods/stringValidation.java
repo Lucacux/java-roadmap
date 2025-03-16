@@ -135,6 +135,7 @@ public class stringValidation {
     }
     public static String domainPartValChar(Scanner inputScanner, String email, String domainPart){
         String regex = "^[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
+        
         Pattern domainPattern = Pattern.compile(regex);
         Matcher domainMatcher = domainPattern.matcher(domainPart);
         if (!domainMatcher.matches()){
