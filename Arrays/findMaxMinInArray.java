@@ -7,6 +7,7 @@ public class findMaxMinInArray {
         int[] retArray = array(inputScanner, retArraySize);
         minArrayLogic(retArray);
         maxArrayLogic(retArray);
+        inputScanner.close();
     }
     // Methods are defined.
     public static int arraySize(Scanner inputScanner){
